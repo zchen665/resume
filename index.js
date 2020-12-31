@@ -1,3 +1,27 @@
+function open_tab(event, tab_id){
+    let tab_content, btns;
+
+    //hide other tabs and display target tab
+    tab_content = document.getElementsByClassName("tab_content");
+    for(let i = 0; i < tab_content.length; i++){
+        tab_content[i].style.display = "none";
+    }
+    document.getElementById(tab_id).style.display = "flex";
+
+    btns = document.getElementsByClassName("tab_container");
+    btns = btns[0].getElementsByTagName('button');
+    for(let i = 0; i <btns.length; i++){
+        btns[i].className = "";
+       
+    }
+    event.target.className += " active";
+    console.log(event.currentTarget)
+    
+    
+}
+
+
+
 //a simple background animation 
 //function expression to avoid interference with other files.
 !function(){
@@ -6,12 +30,13 @@
     attr = { //change canvas properties.
         z: -1,
         color: "100,147,239",
-        opacity: 0.5,
+        opacity: 0.2,
         count: 66,
         radius: 2,   //radius of dot
         speed_fac: 0.5 //increase to speed up dot movement
     }
     c.id = "bg_canvas";
+    c.style.transitionTime = 0.2 //smooth strokes
     c.style.cssText = "position:fixed;top:0px;leftpx:0;z-index:" + attr.z + ";opacity:" +attr.opacity;
     document.getElementsByTagName("body")[0].appendChild(c);
     
