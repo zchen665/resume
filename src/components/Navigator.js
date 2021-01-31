@@ -34,8 +34,7 @@ const Navigator = (props) => {
         <div className='navigator'>
             <Tab className={`navigator__tab ${index === "1" ? "tab--active" : ""}`} idx="1" onClick={handleClick}> Experience</Tab>
             <Tab className={`navigator__tab ${index === "2" ? "tab--active" : ""}`} idx="2" onClick={handleClick}> Courses/Skills</Tab>
-            <Tab className={`navigator__tab ${index === "3" ? "tab--active" : ""}`} idx="3" onClick={handleClick}> Projects</Tab>
-            <Tab className={`navigator__tab ${index === "4" ? "tab--active" : ""}`} idx="4" onClick={handleClick}> More</Tab>
+            <Tab className={`navigator__tab ${index === "3" ? "tab--active" : ""}`} idx="3" onClick={handleClick}> More</Tab>
         </div>
     )
 };

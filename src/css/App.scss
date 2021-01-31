@@ -35,13 +35,13 @@ $tab-height: 2.5em;
 .selfPanel {
   display: flex;
   flex-direction: column;
-  padding-top: 3vh;
 
   &__img {
     margin: auto;
-    padding-bottom: 3vh;
+    padding: 3vh 1vw;
     width: 180px;
     height: auto;
+
   }
 
   &__info {
@@ -127,14 +127,27 @@ $tab-height: 2.5em;
 }
 
 .content{
-  &__form{
-    margin: 2vh 1vw;
+  margin: 2vh 2vw;
+  // &__title{
+// reserved
+  // }
 
+  &__detail{
+    padding-left: 25px;
+    padding-bottom: 20px;
+    border-bottom: $border1;
   }
 
   &--hide{
     display: None;
   }
+}
+
+.hobby{
+  // border: $border1;
+  width: 10 rem;
+  height: 15 rem;
+
 }
 
 
