@@ -10,7 +10,6 @@ function App() {
     if (tabIndex !== curPage) {
       setCurPage(tabIndex);
     }
-    console.log("tab index:", tabIndex);
   }
 
 
@@ -21,6 +20,25 @@ function App() {
       </div>
       <div className="main__right">
         <Navigator onClick={handleClick} />
+        {/* following are pages for different tabs */}
+        <article className={`content ${curPage!=="1"? "content--hide" : ""}`}>
+          <ul className="content__form">
+            <li>im</li>
+            <li>anonymous</li>
+          </ul>
+        </article>
+
+        <article className={`content ${curPage!=="2"? "content--hide" : ""}`}>
+          page 2
+        </article>
+        <article className={`content ${curPage!=="3"? "content--hide" : ""}`}>
+          page 3
+        </article>
+        <article className={`content ${curPage!=="4"? "content--hide" : ""}`}>
+          page 4
+        </article>
+
+
       </div>
     </div>
   );

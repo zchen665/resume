@@ -5,31 +5,72 @@ $border2: gold solid 3px;
 $tab-width: 10em;
 $tab-height: 2.5em;
 
+#root {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
 .main {
   font: $font-stack;
   letter-spacing: 2px;
+  min-width: 100vw;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: row;
 
   &__left {
     flex-basis: 20%;
+    height: inherit;
+    background-color: rgba(255, 245, 218, 0.658);
   }
 
   &__right {
     flex-basis: 80%;
+    background-color: rgba(253, 249, 242, 0.445);
+  }
+}
+
+// for main left/ selfPanel
+.selfPanel {
+  display: flex;
+  flex-direction: column;
+  padding-top: 3vh;
+
+  &__img {
+    margin: auto;
+    padding-bottom: 3vh;
+    width: 180px;
+    height: auto;
+  }
+
+  &__info {
+    letter-spacing: 0;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+
+  &__text {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  &--italic {
+    font-style: italic;
   }
 }
 
 .navigator {
+  top: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
 
-.navigator__tab {
-  margin: auto;
+  &__tab {
+    margin: auto;
+  }
 }
 
 .tab {
@@ -84,6 +125,18 @@ $tab-height: 2.5em;
     background-color: #e7d6c0;
   }
 }
+
+.content{
+  &__form{
+    margin: 2vh 1vw;
+
+  }
+
+  &--hide{
+    display: None;
+  }
+}
+
 
 @keyframes extend {
   to {
