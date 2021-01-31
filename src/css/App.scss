@@ -150,6 +150,14 @@ $tab-height: 2.5em;
 
 }
 
+.slide{
+  &__img{
+    width: 20em;
+    height: auto;
+    animation: fade-in 2s;
+  }
+}
+
 
 @keyframes extend {
   to {
@@ -157,4 +165,14 @@ $tab-height: 2.5em;
     stroke-dashoffset: 0;
     stroke-width: 3;
   }
+}
+
+@keyframes fade-in{
+  from{
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+
 }

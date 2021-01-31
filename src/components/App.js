@@ -2,6 +2,7 @@ import '../css/App.scss';
 import SelfPanel from './SelfPanel';
 import Navigator from './Navigator';
 import { useState } from 'react';
+import Slideshow from './Slideshow';
 
 function App() {
   const [curPage, setCurPage] = useState('1')
@@ -78,6 +79,7 @@ function App() {
             <div className="hobby_item">
               <img className="hobby__img" alt="some books"></img>
               <h5 className="hobby__desc"> coming soon</h5>
+              <Slideshow/>
             </div>
           </div>
         </article>
