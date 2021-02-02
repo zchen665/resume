@@ -1,4 +1,4 @@
-## Static Resume Page
+## [Static Resume Page](https://zchen665.github.io/resume/)
 
 Built with React and Sass. 
 
