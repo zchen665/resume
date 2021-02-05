@@ -3,6 +3,7 @@ import SelfPanel from './SelfPanel';
 import Navigator from './Navigator';
 import { useState } from 'react';
 import Slideshow from './Slideshow';
+const img_url = 'https://raw.githubusercontent.com/zchen665/resume/main/src/img/book_collection.jpg';
 
 function App() {
   const [curPage, setCurPage] = useState('1')
@@ -76,10 +77,13 @@ function App() {
         </article>
         <article className={`content ${curPage !== "3" ? "content--hide" : ""}`}>
           <div className="hobby">
-            <div className="hobby_item">
-              <img className="hobby__img" alt="some books"></img>
+            <div className="hobby__item">
+              <img className="hobby__img slide__img" src={img_url} alt="some books"></img>
               <h5 className="hobby__desc"> coming soon</h5>
-              <Slideshow/>
+            </div>
+            <div className="hobby__item">
+              <Slideshow />
+              <h5 className="hobby__desc"> coming soon</h5>
             </div>
           </div>
         </article>
