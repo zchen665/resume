@@ -12,7 +12,7 @@ $tab-height: 2.5em;
 
 .main {
   font: $font-stack;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   min-width: 100vw;
   min-height: 100vh;
 
@@ -126,7 +126,7 @@ $tab-height: 2.5em;
 }
 
 .content {
-  margin: 2em 2em;
+  margin: 2em 1em;
 
   &__detail {
     padding-left: 25px;
@@ -150,14 +150,14 @@ $tab-height: 2.5em;
   height: 15 rem;
 
   &__item {
-    // border: $border1;
     display: flex;
+    // flex-basis: 40%;
     flex-direction: column;
     justify-content: center;
     border-radius: 15px;
     background-color: #fdf3e5;
     margin: 1em auto;
-    padding: 1em 1em;
+    padding: 1em 2em;
   }
 
   &__img {
@@ -167,7 +167,7 @@ $tab-height: 2.5em;
   &__desc {
     margin-top: 0.5em;
     letter-spacing: 0;
-    width: 26em;
+    width: 25em;
   }
 }
 
@@ -189,10 +189,10 @@ $tab-height: 2.5em;
   }
 }
 
-footer{
+footer {
   position: absolute;
   margin-top: -1.5em;
-  margin-left: 50%;
+  margin-left: 50vw;
   transform: translate(-50%, -50%);
 }
 

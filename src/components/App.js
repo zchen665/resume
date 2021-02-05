@@ -70,7 +70,7 @@ function App() {
           <div className="content__detail">
             <h5>(left being what I'm more confident at)</h5>
             <h5>Programming:</h5>React.js, javascript, HTML/CSS, Python, Verilog, Java, C, SQL
-            <h5>Language:</h5> Chinese (native), English (fluent), Japanese (intermediate
+            <h5>Language:</h5> Chinese (native), English (fluent), Japanese (intermediate <span> </span>
              <a href="https://www.jlpt.jp/e/about/levelsummary.html">JLPT N2</a>).
           </div>
 
@@ -95,8 +95,6 @@ function App() {
           </div>
         </article>
       </div>
-
-      <footer>Zhengzhi@2021</footer>
     </div >
   );
 }
