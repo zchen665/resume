@@ -7,6 +7,8 @@ const url4 = 'https://raw.githubusercontent.com/zchen665/resume/main/src/img/men
 const Slideshow = (props) => {
     const [index, _setIndex] = useState("1");
     const useIndex = React.useRef("1");
+    const usePause = React.useRef(false);
+
     const imgList = ["1", "2", "3", "4"];
 
     const setIndex = (val) => {
@@ -14,42 +16,45 @@ const Slideshow = (props) => {
         useIndex.current = val;
     }
 
+    const setIsPaused = (val) => {
+        usePause.current = val;
+    }
+
     const toNext = () => {
         let curIndx = imgList.indexOf(useIndex.current);
 
-        // console.log("to next, curindx: ", curIndx, typeof (curIndx));
+        //curIndx+2 because curIndx starts from 0 to 3
         curIndx === 3 ? setIndex("1") : setIndex(`${curIndx + 2}`);
     }
 
     const handleSlide = () => {
-        window.setInterval(toNext, 5000);
+        window.setInterval(() => {
+            if (!usePause.current) {
+                toNext();
+            }
+        }, 5000);
     }
 
-    useEffect(() => {
-        handleSlide();
-    }, [])
+    useEffect(handleSlide, [])// eslint-disable-line react-hooks/exhaustive-deps
 
     return (
-        <div className='silde'>
-            <div className={`slide__wrapper ${index !='1'? 'slide--hide': ''}`}>
-                <img className='slide__img' src={url1} />
-                <div className='slide__left'></div>
-                <div className='slide__right'></div>
+        <div
+            className='slide'
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onClick={toNext}
+        >
+            <div className={`slide__wrapper ${index !== '1' ? 'slide--hide' : ''}`}>
+                <img className='slide__img slide--pointer' src={url1} alt="lake Mendota" />
             </div>
-            <div className={`slide__wrapper ${index !='2'? 'slide--hide': ''}`}>
-                <img className='slide__img' src={url2} />
-                <div className='slide__left'></div>
-                <div className='slide__right'></div>
+            <div className={`slide__wrapper ${index !== '2' ? 'slide--hide' : ''}`}>
+                <img className='slide__img slide--pointer' src={url2} alt="lake Mendota" />
             </div>
-            <div className={`slide__wrapper ${index !='3'? 'slide--hide': ''}`}>
-                <img className='slide__img' src={url3} />
-                <div className='slide__left'></div>
-                <div className='slide__right'></div>
+            <div className={`slide__wrapper ${index !== '3' ? 'slide--hide' : ''}`}>
+                <img className='slide__img slide--pointer' src={url3} alt="lake Mendota" />
             </div>
-            <div className={`slide__wrapper ${index !='4'? 'slide--hide': ''}`}>
-                <img className='slide__img' src={url4} />
-                <div className='slide__left'></div>
-                <div className='slide__right'></div>
+            <div className={`slide__wrapper ${index !== '4' ? 'slide--hide' : ''}`}>
+                <img className='slide__img slide--pointer' src={url4} alt="lake Mendota" />
             </div>
         </div>
     );

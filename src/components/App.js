@@ -3,8 +3,8 @@ import SelfPanel from './SelfPanel';
 import Navigator from './Navigator';
 import { useState } from 'react';
 import Slideshow from './Slideshow';
-const img_url = 'https://raw.githubusercontent.com/zchen665/resume/main/src/img/book_collection.jpg';
-
+const IMG_URL = 'https://raw.githubusercontent.com/zchen665/resume/main/src/img/book_collection.jpg';
+const MENDOTA_MAP_URL = 'https://www.google.com/maps/place/Lake+Mendota/@43.1120204,-89.4954853,12z/data=!3m1!4b1!4m5!3m4!1s0x88065354b86eb411:0x9729efbead0277c3!8m2!3d43.109671!4d-89.4206079';
 function App() {
   const [curPage, setCurPage] = useState('1')
 
@@ -78,18 +78,25 @@ function App() {
         <article className={`content ${curPage !== "3" ? "content--hide" : ""}`}>
           <div className="hobby">
             <div className="hobby__item">
-              <img className="hobby__img slide__img" src={img_url} alt="some books"></img>
-              <h5 className="hobby__desc"> coming soon</h5>
+              <img className="hobby__img slide__img" src={IMG_URL} alt="some books"></img>
+              <p className="hobby__desc"> I read Japanese novels in my spare time. Though time-consuming since
+              I tend to look up unfamiliar words and grammars all the time, it's surprisingly relaxing and enjoyable.
+              Currently, I'm reading <span> </span>
+                <a target="_blank" rel="noopener noreferrer" href='https://en.wikipedia.org/wiki/Kafka_on_the_Shore'>
+                  Kafka on the Shore</a>.
+              </p>
             </div>
             <div className="hobby__item">
               <Slideshow />
-              <h5 className="hobby__desc"> coming soon</h5>
+              <p className="hobby__desc">Walking around is one of my favorite things to do. Great for mood boosting.
+              Above are some gorgeous views I've seen near <span> </span>
+                <a target="_blank" rel="noopener noreferrer" href={MENDOTA_MAP_URL}>Lake Mendota</a>.</p>
             </div>
           </div>
         </article>
-
-
       </div>
+
+      <footer>Zhengzhi@2021</footer>
     </div >
   );
 }
